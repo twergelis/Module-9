@@ -1,0 +1,19 @@
+#Import data file "Grades.csv"
+
+>plot(Grades)
+
+#Lattice
+> library(lattice)
+> dotplot(GPA ~ Name, data = Grades,
+  + pch = "*",
+  + col = "blue",
+  + main = "Student GPAs",
+  + xlab = "Student Name",
+  + ylab = "GPA",
+  + cex = 2.5)
+
+#ggplot2
+> library(ggplot2)
+> ggplot(Grades, aes(x = Sex, y = GPA)) +
+  + geom_point() +
+  + labs(title = "GPA by Sex", x = "Sex", y = "GPA")
